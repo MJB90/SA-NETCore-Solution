@@ -1,0 +1,26 @@
+﻿@using SA_NETCore_Solution.Models
+@{
+    string mins = (string)ViewData["mins"];
+    string secs = (string)ViewData["secs"];
+    List<FinalSongs> songList = (List<FinalSongs>)ViewData["SongList"];
+}
+<form action="" method="POST">
+    Search: <input name="mins" value=@mins />
+    <input name="secs" value=@secs />
+    <input type="submit" value="Submit">
+</form>
+<table>
+    <tr class="even_row">
+        <th>Title</th>
+        <th>Length</th>
+        <th>Genre</th>
+    </tr>
+    @foreach(FinalSongs song in songList)
+        {
+        <tr>
+            <td>@song.Title</td>
+            <td>@song.Length</td>
+            <td>@song.Name</td>
+        </tr>
+        }
+</table>
